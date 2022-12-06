@@ -1,0 +1,5 @@
+{
+    "project_name": "Base Python Project",
+    "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '-')}}",
+    "postgres_password": "changethis"
+  }

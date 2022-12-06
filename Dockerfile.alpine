@@ -1,0 +1,16 @@
+
+FROM python:3.10.8-alpine3.17
+
+RUN apk update && apk upgrade --available && sync
+
+RUN apk add py3-pip
+
+RUN adduser -S pythonalpine
+
+RUN python -m pip install cookiecutter
+
+WORKDIR /cookiecutter
+
+COPY $PWD/cookiecutter.json /cookiecutter/
+
+ENTRYPOINT ["python", "-m", "cookiecutter", "--no-input", "."]
